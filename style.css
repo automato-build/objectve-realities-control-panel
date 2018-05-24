@@ -1,0 +1,36 @@
+body{
+	text-align: center;
+}
+.row{
+	display: inline-block;
+	width: 100%;
+}
+
+.col-50{
+	width: 50%;
+	float: left;
+}
+
+.device-box{
+	border: 1px solid black;
+}
+
+.device-box h1{
+	font-size: 12px;
+background-color: black;
+color: white;
+margin-top: 0px;
+}
+
+button{
+	height: 40px;
+	background-color: #fafafa;
+	border: 1px solid black;
+	border-bottom: 4px solid black;
+	margin-bottom: 15px;
+	margin-top: 5px;
+}
+
+button:hover{
+	border-bottom: 7px solid black;
+}
