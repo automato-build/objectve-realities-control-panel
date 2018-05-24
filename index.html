@@ -44,8 +44,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<button class="primary" id="start experience">
-								start group experience
+						<button class="primary" id="start_roomba" onclick="startRoomba()">
+								start roomba
 						</button>
 					</div>
 				</div>
@@ -77,6 +77,14 @@
 								<td class="label">
 								</td>
 							</tr>
+							<tr>
+								<td class="value">
+									position
+								</td>
+								<td class="label">
+									X:<span id="roomba_Xposition">0</span>   Y:<span id="roomba_Yposition">0</span>
+								</td>
+							</tr>
 						</table>
 					</div>
 					<div class="row">
@@ -102,8 +110,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<button class="primary" id="start experience">
-								start group experience
+						<button class="primary" id="start_fan"  onclick="startFan()">
+								start fan
 						</button>
 					</div>
 				</div>
@@ -135,6 +143,14 @@
 								<td class="label">
 								</td>
 							</tr>
+							<tr>
+								<td class="value">
+									angle
+								</td>
+								<td class="label" id=fan_angle>
+									0
+								</td>
+							</tr>
 						</table>
 					</div>
 					<div class="row">
@@ -161,8 +177,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<button class="primary" id="start experience">
-								start group experience
+						<button class="primary" id="start_plug" onclick="startPlug()">
+								start plug
 						</button>
 					</div>
 				</div>
