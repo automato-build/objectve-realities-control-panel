@@ -22,6 +22,10 @@ color: white;
 margin-top: 0px;
 }
 
+.device-box h1.blink{
+	background-color: gray;
+}
+
 button{
 	height: 40px;
 	background-color: #fafafa;

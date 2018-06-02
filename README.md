@@ -4,18 +4,24 @@ Trough this control panel you can monitor the status of OR installation and star
 
 ### MQTT topics:
 
-- /device/roomba/
-- /device/plug/commands			start
-- /device/fan/commands			start
-- /device/main/commands			start
+- or/device/roomba/commands   start
+- or/device/plug/commands			start
+- or/device/fan/commands			start
+- or/device/main/commands			start
 
-- /device/roomba/fps/				x
-- /device/plug/fps/					x
-- /device/fan/fps/					x
-- /device/main/fps/ 				x
+- or/device/roomba/fps/				x
+- or/device/plug/fps/					x
+- or/device/fan/fps/					x
+- or/device/main/fps/ 				x
 -
-- /device/roomba/position/	[x,y]
-- /device/plug/angle/				[x,y]
+- or/device/roomba/position/	[x,y]
+- or/device/plug/angle/				[x,y]
+
+- or/device/roomba/scene/				x
+- or/device/plug/scene/					x
+- or/device/fan/scene/					x
+- or/device/main/scene/ 				x
+
 
 ### requirements
 

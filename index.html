@@ -1,6 +1,8 @@
 <html>
 
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
 	<script src="jquery.min.js"></script>
 	<script src="mqttws31.min.js" type="text/javascript"></script>
 	<link rel="stylesheet" href="style.css" />
@@ -30,7 +32,7 @@
 		</div>
 
 
-		<div class="device-box">
+		<div class="device-box" id="roomba">
 			<div class="row">
 				<h1>
 					ROOMBA
@@ -40,7 +42,7 @@
 				<div class="col-50">
 					<div class="row">
 						<div class="status">
-							ALL GOOD
+						SCENE: <span id="roomba_scene"></span>
 						</div>
 					</div>
 					<div class="row">
@@ -54,15 +56,7 @@
 					<div class=row>
 
 						<table class="device-status">
-							<tr>
-								<td class="label">
-									connected
-								</td>
-								<td class="value">
-									yes
-								</td>
-							</tr>
-							<tr>
+														<tr>
 								<td class="label">
 									FPS
 								</td>
@@ -82,7 +76,7 @@
 									position
 								</td>
 								<td class="label">
-									X:<span id="roomba_Xposition">0</span>   Y:<span id="roomba_Yposition">0</span>
+									X:<span id="roomba_Xposition">0</span>   Y:<span id="roomba_Yposition">0</span> Z:<span id="roomba_Zposition">0</span>
 								</td>
 							</tr>
 						</table>
@@ -96,7 +90,7 @@
 		</div>
 
 
-		<div class="device-box">
+		<div class="device-box" id="fan">
 			<div class="row">
 				<h1>
 					FAN
@@ -106,7 +100,7 @@
 				<div class="col-50">
 					<div class="row">
 						<div class="status">
-							ALL GOOD
+							SCENE: <span id="fan_scene"></span>
 						</div>
 					</div>
 					<div class="row">
@@ -120,15 +114,7 @@
 					<div class=row>
 
 						<table class="device-status">
-							<tr>
-								<td class="label">
-									connected
-								</td>
-								<td class="value">
-									yes
-								</td>
-							</tr>
-							<tr>
+													<tr>
 								<td class="label">
 									FPS
 								</td>
@@ -161,9 +147,7 @@
 			</div>
 		</div>
 
-
-
-		<div class="device-box">
+		<div class="device-box" id="plug">
 			<div class="row">
 				<h1>
 					PLUG
@@ -173,7 +157,7 @@
 				<div class="col-50">
 					<div class="row">
 						<div class="status">
-							ALL GOOD
+							SCENE: <span id="plug_scene"></span>
 						</div>
 					</div>
 					<div class="row">
@@ -187,14 +171,7 @@
 					<div class=row>
 
 						<table class="device-status">
-							<tr>
-								<td class="label">
-									connected
-								</td>
-								<td class="value">
-									yes
-								</td>
-							</tr>
+						
 							<tr>
 								<td class="label">
 									FPS
@@ -208,6 +185,14 @@
 									status
 								</td>
 								<td class="label">
+								</td>
+							</tr>
+							<tr>
+								<td class="value">
+									plug view
+								</td>
+								<td class="label" id=plug_id>
+									0
 								</td>
 							</tr>
 						</table>
