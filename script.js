@@ -55,6 +55,8 @@ function onMessageArrived(message) {
 					$('#fan_battery_status').html(message.payloadString);
 				}else if (address[3] == 'batterylevel') {
 					$('#fan_battery_level').html(message.payloadString);
+				}else if (address[3] == 'status') {
+					$('#fan_status').html(message.payloadString);
 				}
 
 				break;
@@ -74,6 +76,8 @@ function onMessageArrived(message) {
 					$('#roomba_battery_status').html(message.payloadString);
 				}else if (address[3] == 'batterylevel') {
 					$('#roomba_battery_level').html(message.payloadString);
+				}else if (address[3] == 'status') {
+					$('#roomba_status').html(message.payloadString);
 				}
 				break;
 			case 'plug':
@@ -92,6 +96,8 @@ function onMessageArrived(message) {
 					$('#plug_battery_status').html(message.payloadString);
 				}else if (address[3] == 'batterylevel') {
 					$('#plug_battery_level').html(message.payloadString);
+				}else if (address[3] == 'status') {
+					$('#plug_status').html(message.payloadString);
 				}
 				break;
 			default:
