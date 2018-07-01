@@ -1,23 +1,23 @@
-//client = new Paho.MQTT.Client("192.168.0.101", Number(1884), "clientId");
+client = new Paho.MQTT.Client("192.168.0.101", Number(1884), "clientId");
 
-client = new Paho.MQTT.Client("broker.shiftr.io", Number(443), "controlpanel");
+//client = new Paho.MQTT.Client("broker.shiftr.io", Number(443), "controlpanel");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
 // connect the client using shiftr
-client.connect({
-	onSuccess: onConnect,
-	userName:"automato",
-	password:"7ffa6081e4db88d1",
-	useSSL:true,
-});
-
-// //connect to the client on local network
 // client.connect({
 // 	onSuccess: onConnect,
+// 	userName:"automato",
+// 	password:"7ffa6081e4db88d1",
+// 	useSSL:true,
 // });
+
+//connect to the client on local network
+client.connect({
+	onSuccess: onConnect,
+});
 
 
 // called when the client connects
