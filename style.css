@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "roboto";
+    src:url("./fonts/RobotoMono-Regular.ttf");
+}
+
 body{
 	text-align: center;
+	font-family: "roboto";
 }
 .row{
 	display: inline-block;

@@ -1,13 +1,23 @@
-client = new Paho.MQTT.Client("192.168.0.101", Number(1884), "clientId");
+//client = new Paho.MQTT.Client("192.168.0.101", Number(1884), "clientId");
+
+client = new Paho.MQTT.Client("broker.shiftr.io", Number(443), "controlpanel");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;
 client.onMessageArrived = onMessageArrived;
 
-// connect the client
+// connect the client using shiftr
 client.connect({
-	onSuccess: onConnect
+	onSuccess: onConnect,
+	userName:"automato",
+	password:"7ffa6081e4db88d1",
+	useSSL:true,
 });
+
+// //connect to the client on local network
+// client.connect({
+// 	onSuccess: onConnect,
+// });
 
 
 // called when the client connects
@@ -41,6 +51,10 @@ function onMessageArrived(message) {
 					$('#fan_angle').html(message.payloadString);
 				} else if (address[3] == 'scene') {
 					$('#fan_scene').html(message.payloadString);
+				}else if (address[3] == 'batterystatus') {
+					$('#fan_battery_status').html(message.payloadString);
+				}else if (address[3] == 'batterylevel') {
+					$('#fan_battery_level').html(message.payloadString);
 				}
 
 				break;
@@ -56,6 +70,10 @@ function onMessageArrived(message) {
 					$('#roomba_Zposition').html(positionArray[2]);
 				} else if (address[3] == 'scene') {
 					$('#roomba_scene').html(message.payloadString);
+				}else if (address[3] == 'batterystatus') {
+					$('#roomba_battery_status').html(message.payloadString);
+				}else if (address[3] == 'batterylevel') {
+					$('#roomba_battery_level').html(message.payloadString);
 				}
 				break;
 			case 'plug':
@@ -69,7 +87,11 @@ function onMessageArrived(message) {
 					$('#plug_id').html(positionArray[0]);
 					//$('#plug_description').html(positionArray[0]);
 				} else if (address[3] == 'scene') {
-					$('#roomba_scene').html(message.payloadString);
+					$('#plug_scene').html(message.payloadString);
+				}else if (address[3] == 'batterystatus') {
+					$('#plug_battery_status').html(message.payloadString);
+				}else if (address[3] == 'batterylevel') {
+					$('#plug_battery_level').html(message.payloadString);
 				}
 				break;
 			default:
