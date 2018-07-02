@@ -1,5 +1,5 @@
+//client = new Paho.MQTT.Client("127.0.0.1", Number(1884), "clientId");
 client = new Paho.MQTT.Client("192.168.0.101", Number(1884), "clientId");
-
 //client = new Paho.MQTT.Client("broker.shiftr.io", Number(443), "controlpanel");
 
 // set callback handlers
@@ -18,6 +18,10 @@ client.onMessageArrived = onMessageArrived;
 client.connect({
 	onSuccess: onConnect,
 });
+
+var roomba_timer =setTimeout('resetFan',0);
+var fan_timer =setTimeout('resetFan',0);
+var plug_timer =setTimeout('resetFan',0);
 
 
 // called when the client connects
@@ -44,6 +48,7 @@ function onMessageArrived(message) {
 		switch (address[2]) {
 			case 'fan':
 				blinkFan();
+				window.clearTimeout(fan_timer);
 				console.log("got a message from/for the fan")
 				if (address[3] == 'fps') {
 					$('#fan_fps').html(message.payloadString);
@@ -58,6 +63,8 @@ function onMessageArrived(message) {
 				}else if (address[3] == 'status') {
 					$('#fan_status').html(message.payloadString);
 				}
+
+				fan_timer=setTimeout(resetFan,5000);
 
 				break;
 			case 'roomba':
@@ -150,4 +157,33 @@ function blinkPlug() {
 	setTimeout(function() {
 		$('#plug h1').toggleClass("blink", false);
 	}, 100);
+}
+
+function resetPlug(){
+	$('#plug_fps').text(_);
+	$('#plug_id').html();
+	$('#plug_scene').html();
+	$('#plug_battery_status').html(_);
+	$('#plug_battery_level').html("_");
+}
+
+function resetRoomba(){
+		$('#roomba_fps').html("_");
+		$('#roomba_Xposition').html("_");
+		$('#roomba_Yposition').html("_");
+		$('#roomba_Zposition').html("_");
+		$('#roomba_scene').html("_");
+		$('#roomba_battery_status').html("_");
+		$('#roomba_battery_level').html("_");
+
+}
+
+function resetFan(){
+		$('#fan_fps').html("_");
+		$('#fan_angle').html("_");
+		$('#fan_scene').html("_");
+		$('#fan_battery_status').html("_");
+		$('#fan_battery_level').html("_");
+		console.log("cleared fan values");
+
 }

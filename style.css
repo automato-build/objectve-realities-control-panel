@@ -14,7 +14,7 @@ body{
 
 .col-50{
 	width: 50%;
-	float: left;
+	margin:auto;
 }
 
 .device-box{
